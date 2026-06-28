@@ -21,7 +21,8 @@
         <a href="#about">À propos</a>
         <a href="#stage">Stage</a>
         <a href="#projets">Projets</a>
-        <a href="#competences">Compétences</a>
+        <a href="#competences-bts">Compétences BTS</a>
+        <a href="#veille">Veille</a>
         <a href="#contact">Contact</a>
     </nav>
 </header>
@@ -87,8 +88,9 @@
         </div>
 
         <p>
-            Durant mon stage, j'ai participé au développement d'outils internes permettant d'automatiser
-            la gestion de produits sur plusieurs marketplaces et d'analyser leur rentabilité.
+            Durant mon stage, j'ai repris et fait évoluer un pipeline Python existant d'analyse de
+            rentabilité Amazon FBA, en le rendant fiable, complet et exploitable sur l'ensemble
+            des marketplaces européens et internationaux.
         </p>
 
         <div class="missions">
@@ -98,6 +100,99 @@
             <span>Excel automatisé</span>
             <span>Traitement batch</span>
             <span>API REST</span>
+        </div>
+    </div>
+
+    <div class="stats-grid">
+        <div class="stat">
+            <span class="stat-value">8 100</span>
+            <span class="stat-label">produits traités</span>
+        </div>
+        <div class="stat">
+            <span class="stat-value">16</span>
+            <span class="stat-label">marketplaces couverts</span>
+        </div>
+        <div class="stat">
+            <span class="stat-value">×20</span>
+            <span class="stat-label">requêtes API réduites</span>
+        </div>
+        <div class="stat">
+            <span class="stat-value">129 600</span>
+            <span class="stat-label">lignes générées</span>
+        </div>
+    </div>
+
+    <div class="achievements">
+        <div class="achievement">
+            <span class="achievement-num">01</span>
+            <div>
+                <h4>Fiabilisation du pipeline existant</h4>
+                <p>
+                    Correction des incohérences entre statuts catalogue et statuts fees, du calcul du ROI
+                    lorsque le coût d'achat est absent, et du parsing des réponses API qui retournait
+                    des valeurs nulles malgré un appel réussi.
+                </p>
+            </div>
+        </div>
+
+        <div class="achievement">
+            <span class="achievement-num">02</span>
+            <div>
+                <h4>Système de fallback à trois niveaux</h4>
+                <p>
+                    Mise en place d'une cascade de secours pour garantir qu'aucun produit ne reste sans
+                    estimation de frais : appel API en mode FBA, puis FBM, puis estimation locale basée
+                    sur la grille tarifaire officielle Amazon FBA Europe.
+                </p>
+            </div>
+        </div>
+
+        <div class="achievement">
+            <span class="achievement-num">03</span>
+            <div>
+                <h4>Extension à 16 marketplaces internationaux</h4>
+                <p>
+                    Ajout de sept marketplaces (Irlande, Émirats, Arabie Saoudite, Égypte, Turquie,
+                    Afrique du Sud, Inde) avec gestion des conversions de devises pour le calcul
+                    des frais estimés (AED, SAR, EGP, TRY, ZAR, INR).
+                </p>
+            </div>
+        </div>
+
+        <div class="achievement">
+            <span class="achievement-num">04</span>
+            <div>
+                <h4>Optimisation des performances API</h4>
+                <p>
+                    Passage d'un appel par produit par marketplace à des requêtes groupées de 20
+                    identifiants via l'endpoint searchCatalogItems, réduisant le volume de requêtes
+                    de 129 600 à environ 6 500. Parallélisation par marketplace et gestion d'un
+                    rate limiter respectant la limite Amazon de 2 requêtes par seconde.
+                </p>
+            </div>
+        </div>
+
+        <div class="achievement">
+            <span class="achievement-num">05</span>
+            <div>
+                <h4>Export automatisé multi-fichiers</h4>
+                <p>
+                    Génération d'un fichier Excel mis en forme par marketplace (en-têtes colorés,
+                    filtres, gel des volets, statuts colorés) directement exploitable par les équipes.
+                </p>
+            </div>
+        </div>
+
+        <div class="achievement">
+            <span class="achievement-num">06</span>
+            <div>
+                <h4>Script de test et de démonstration</h4>
+                <p>
+                    Création d'un outil autonome affichant en détail un appel API réel (catalogue
+                    puis frais) pour un produit donné, utile au débogage et à la présentation du
+                    fonctionnement de l'outil.
+                </p>
+            </div>
         </div>
     </div>
 </section>
@@ -110,45 +205,123 @@
 
         <article class="project-card">
             <span class="project-icon">📊</span>
+            <span class="project-status status-done">Réalisé en stage</span>
             <h3>Amazon FBA Analyzer</h3>
             <p>
-                Outil Python permettant d'analyser automatiquement la rentabilité de milliers
-                de produits Amazon sur plusieurs marketplaces.
+                Pipeline Python analysant automatiquement la rentabilité de 8 100 produits
+                sur 16 marketplaces Amazon, du catalogue jusqu'au calcul du ROI.
             </p>
             <ul>
-                <li>Intégration Amazon SP-API</li>
-                <li>Calcul frais FBA, marge, ROI</li>
-                <li>Export Excel automatisé</li>
+                <li>Intégration Amazon SP-API (catalogue + frais)</li>
+                <li>Calcul frais FBA, marge, ROI par marketplace</li>
+                <li>Export Excel automatisé multi-fichiers</li>
             </ul>
+            <div class="project-tags">
+                <span>Python</span><span>MySQL</span><span>SP-API</span>
+            </div>
         </article>
 
         <article class="project-card">
             <span class="project-icon">🌍</span>
+            <span class="project-status status-done">Réalisé en stage</span>
             <h3>Master API Marketplace</h3>
             <p>
-                Plateforme centralisée pour gérer les stocks et catalogues produits sur plusieurs
-                marketplaces comme Amazon, Cdiscount, Back Market et eBay.
+                Réflexion sur une API centrale pour synchroniser les niveaux de stock entre
+                plusieurs marketplaces (Amazon, Cdiscount, Back Market, eBay) à partir d'une
+                base de données unique.
             </p>
             <ul>
-                <li>Centralisation des données</li>
-                <li>Gestion multi-marketplaces</li>
-                <li>Base de données MySQL</li>
+                <li>Modélisation d'une base de données centralisée</li>
+                <li>Logique de synchronisation multi-marketplaces</li>
+                <li>Étape suivante : endpoints de mise à jour en temps réel</li>
             </ul>
+            <div class="project-tags">
+                <span>Python</span><span>MySQL</span><span>API REST</span>
+            </div>
         </article>
 
         <article class="project-card">
             <span class="project-icon">📚</span>
+            <span class="project-status status-done">Projet pédagogique</span>
             <h3>Bibilyone</h3>
             <p>
-                Projet pédagogique de bibliothèque développé en PHP, HTML, CSS, JavaScript et MySQL.
+                Site vitrine de bibliothèque développé en équipe, du cahier des charges
+                à la mise en production.
             </p>
             <ul>
-                <li>Gestion utilisateurs</li>
-                <li>Favoris et historique</li>
-                <li>Administration</li>
+                <li>Gestion des rôles (utilisateur, bibliothécaire, admin)</li>
+                <li>Favoris, historique et notation par étoiles</li>
+                <li>Clean URLs via .htaccess</li>
             </ul>
+            <div class="project-tags">
+                <span>PHP</span><span>MySQL</span><span>JavaScript</span>
+            </div>
         </article>
 
+    </div>
+</section>
+
+<section id="competences-bts" class="section">
+    <p class="section-label">Tableau de synthèse</p>
+    <h2>Compétences mobilisées en stage</h2>
+
+    <div class="comp-table">
+        <div class="comp-row comp-head">
+            <span>Compétence</span>
+            <span>Réalisation associée</span>
+            <span>Période</span>
+        </div>
+
+        <div class="comp-row">
+            <span class="comp-name">Gérer le patrimoine informatique</span>
+            <span>Fiabilisation du pipeline Python (statuts, ROI, parsing des frais) et gestion
+                de la base MySQL centralisant 129 600 lignes sur 16 marketplaces.</span>
+            <span class="comp-date">27/04/26 - 26/06/26</span>
+        </div>
+
+        <div class="comp-row">
+            <span class="comp-name">Mettre à disposition un service informatique</span>
+            <span>Optimisation des appels API (batch, parallélisation, rate limiting) et export
+                automatisé d'un fichier Excel mis en forme par marketplace.</span>
+            <span class="comp-date">27/04/26 - 26/06/26</span>
+        </div>
+
+        <div class="comp-row">
+            <span class="comp-name">Organiser son développement professionnel</span>
+            <span>Création d'un script de test autonome pour comprendre, vérifier et démontrer
+                le fonctionnement réel de l'API Amazon SP-API.</span>
+            <span class="comp-date">27/04/26 - 26/06/26</span>
+        </div>
+    </div>
+</section>
+
+<section id="veille" class="section">
+    <p class="section-label">Auto-formation</p>
+    <h2>Veille technologique</h2>
+
+    <div class="about-grid">
+        <div>
+            <p>
+                Pendant mon stage, j'ai dû me former en autonomie à l'API Amazon Selling Partner en m'appuyant principalement sur la documentation
+                officielle développeur d'Amazon, en passant des appels avec Amazon et sur des retours d'expérience trouvés sur
+                GitHub Issues pour comprendre des comportements non documentés de l'API
+                (rejet de calcul de frais pour certains ASIN, gestion des limites de débit).
+            </p>
+            <p>
+                J'ai aussi suivi l'actualité autour des nouveaux modèles d'IA générative
+                utilisés en assistance au développement, et testé leur usage concret pour
+                accélérer le débogage et la documentation de mon propre code.
+            </p>
+        </div>
+
+        <div class="info-box">
+            <p><strong>Sources suivies :</strong></p>
+            <p>Documentation officielle Amazon SP-API</p>
+            <p>GitHub Issues (selling-partner-api-models)</p>
+            <p>Documentation Python (requests, openpyxl, concurrent.futures)</p>
+            <p><strong>Contribution :</strong></p>
+            <p>Script de test réutilisable partagé en interne pour le débogage de l'API</p>
+        </div>
     </div>
 </section>
 

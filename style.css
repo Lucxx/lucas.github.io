@@ -357,6 +357,173 @@ strong {
     gap: 18px;
 }
 
+/* ── Stats grid (stage section) ─────────────────────────── */
+.stats-grid {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+.stat {
+    text-align: center;
+    padding: 24px 12px;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    background: var(--card);
+}
+
+.stat-value {
+    display: block;
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    font-weight: 900;
+    letter-spacing: -1px;
+}
+
+.stat-label {
+    display: block;
+    margin-top: 6px;
+    font-size: 0.82rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* ── Achievements list (stage section) ──────────────────── */
+.achievements {
+    margin-top: 48px;
+    display: grid;
+    gap: 0;
+}
+
+.achievement {
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    gap: 24px;
+    padding: 26px 0;
+    border-top: 1px solid var(--border);
+}
+
+.achievement:last-child {
+    border-bottom: 1px solid var(--border);
+}
+
+.achievement-num {
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: var(--muted);
+    letter-spacing: 1px;
+}
+
+.achievement h4 {
+    font-size: 1.05rem;
+    margin-bottom: 8px;
+}
+
+.achievement p {
+    color: var(--muted);
+    line-height: 1.7;
+}
+
+/* ── Project status badges ──────────────────────────────── */
+.project-status {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 5px 12px;
+    border-radius: 999px;
+    margin-bottom: 14px;
+}
+
+.status-done {
+    background: rgba(255, 255, 255, 0.14);
+    color: white;
+}
+
+.status-progress {
+    background: transparent;
+    border: 1px dashed var(--border);
+    color: var(--muted);
+}
+
+.project-tags {
+    margin-top: 18px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.project-tags span {
+    font-size: 0.76rem;
+    padding: 5px 11px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    color: var(--muted);
+}
+
+.see-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 32px;
+    color: var(--muted);
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.see-more:hover {
+    color: white;
+    gap: 12px;
+}
+
+/* ── Tableau de synthèse BTS ─────────────────────────────── */
+.comp-table {
+    display: grid;
+    gap: 1px;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.comp-row {
+    display: grid;
+    grid-template-columns: 1fr 2fr 0.8fr;
+    gap: 24px;
+    padding: 22px 26px;
+    background: var(--bg-soft);
+}
+
+.comp-row:not(:last-child) {
+    border-bottom: 1px solid var(--border);
+}
+
+.comp-head {
+    background: rgba(255, 255, 255, 0.08);
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--muted);
+    font-weight: 700;
+}
+
+.comp-name {
+    font-weight: 700;
+}
+
+.comp-row:not(.comp-head) span:nth-child(2) {
+    color: var(--muted);
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.comp-date {
+    color: var(--muted);
+    font-size: 0.85rem;
+    white-space: nowrap;
+}
+
 .contact-info {
     display: flex;
     flex-direction: column;
@@ -426,6 +593,24 @@ strong {
 
     .skills-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .achievement {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .comp-row {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .comp-date {
+        white-space: normal;
     }
 
     .section {
