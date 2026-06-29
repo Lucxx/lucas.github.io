@@ -58,6 +58,7 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
     transition: background-color 0.4s ease, color 0.3s ease;
+    font-size: 16px;
 }
 
 /* Utilitaires */
@@ -743,4 +744,82 @@ h2 {
     .section {
         padding: 80px 6% 40px 6%;
     }
+}
+
+/* ─── ALIGNEMENT ET STRUCTURE DU TABLEAU DE SYNTHÈSE (AÉRÉ) ─── */
+.table-excel-container {
+    width: 100%;
+    overflow-x: auto; /* Défilement horizontal si l'écran est trop petit */
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    background: var(--bg-soft);
+    box-shadow: var(--shadow);
+    margin-top: 30px;
+}
+
+.tableau-final {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 1250px; /* Légèrement augmenté pour laisser le texte s'étaler */
+}
+
+/* Espacement global des cellules */
+.tableau-final th, 
+.tableau-final td {
+    padding: 28px 24px; /* Augmenté à 28px haut/bas pour un rendu très espacé */
+    border-bottom: 1px solid var(--border);
+    text-align: center;
+    vertical-align: middle;
+    font-size: 0.95rem;
+    color: var(--text);
+    line-height: 1.6; /* Donne du souffle aux longues descriptions */
+}
+
+/* En-têtes du tableau */
+.tableau-final th {
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    background: rgba(0, 0, 0, 0.25);
+    padding: 22px 20px;
+}
+
+:root[data-theme="light"] .tableau-final th {
+    background: rgba(0, 0, 0, 0.03);
+}
+
+.tableau-final tr:last-child td {
+    border-bottom: none;
+}
+
+/* Alignements et largeurs des colonnes textuelles */
+.tableau-final .align-gauche {
+    text-align: left;
+}
+
+.tableau-final .col-titre {
+    text-align: left;
+    font-weight: 500;
+    width: 42%; /* Largeur confortable pour éviter les retours à la ligne trop brusques */
+}
+
+.tableau-final .col-date {
+    text-align: left;
+    color: var(--muted);
+    font-size: 0.85rem;
+    white-space: nowrap;
+    width: 13%;
+}
+
+/* Style des cases cochées 'X' */
+.tableau-final .case-x {
+    font-weight: 900;
+    color: #6366f1;
+    background: rgba(99, 102, 241, 0.08);
+    font-size: 1.15rem;
+}
+
+:root[data-theme="light"] .tableau-final .case-x {
+    background: rgba(99, 102, 241, 0.04);
 }

@@ -19,7 +19,6 @@
     <nav>
         <a href="#accueil">Accueil</a>
         <a href="#about">À propos</a>
-        <a href="#parcours">Parcours</a>
         <a href="#stage">Stage</a>
         <a href="#projets">Projets</a>
         <a href="#competences-bts">Compétences BTS</a>
@@ -286,55 +285,93 @@
     <p class="section-label">Tableau de synthèse</p>
     <h2>Compétences mobilisées en stage</h2>
 
-    <div class="comp-table">
-        <div class="comp-row comp-head">
-            <span>Compétence (Référentiel BTS SIO)</span>
-            <span>Description détaillée de la réalisation</span>
-            <span>Technologies & Livrables</span>
-            <span>Période</span>
-        </div>
-
-        <div class="comp-row">
-            <span class="comp-name"><strong>Gérer le patrimoine informatique</strong></span>
-            <span>Maintenance corrective, refactoring et fiabilisation d’un pipeline applicatif Python existant d'analyse financière (calculs de ROI, traitement des valeurs nulles).</span>
-            <span>Python, Git, Traitement Batch</span>
-            <span class="comp-date">16/05/26 - 26/06/26</span>
-        </div>
-
-        <div class="comp-row">
-            <span class="comp-name"><strong>Gérer le patrimoine informatique</strong></span>
-            <span>Conception, requêtage et exploitation d'une base de données relationnelle centralisée pour stocker les métadonnées et frais de 8 100 produits.</span>
-            <span>MySQL</span>
-            <span class="comp-date">16/05/26 - 26/06/26</span>
-        </div>
-
-        <div class="comp-row">
-            <span class="comp-name"><strong>Développer la présence en ligne de l'organisation</strong></span>
-            <span>Adaptation et déploiement du moteur d'analyse sur 16 marketplaces mondiales avec intégration d'algorithmes de conversion de devises à la volée.</span>
-            <span>Python, Devises mondiales</span>
-            <span class="comp-date">16/05/26 - 26/06/26</span>
-        </div>
-
-        <div class="comp-row">
-            <span class="comp-name"><strong>Mettre à disposition des utilisateurs un service informatique</strong></span>
-            <span>Optimisation algorithmique des requêtes vers l'Amazon SP-API (regroupement par paquets de 20 IDs) et implémentation d’un Rate Limiter pour respecter les quotas de l'éditeur.</span>
-            <span>Amazon SP-API, Scripting Python</span>
-            <span class="comp-date">16/05/26 - 26/06/26</span>
-        </div>
-
-        <div class="comp-row">
-            <span class="comp-name"><strong>Mettre à disposition des utilisateurs un service informatique</strong></span>
-            <span>Création d'un algorithme de secours (fallback) à 3 niveaux (FBA, FBM, puis estimation locale) pour assurer la continuité des calculs financiers en cas de défaillance réseau ou API.</span>
-            <span>Logique métier, Algorithmique</span>
-            <span class="comp-date">16/05/26 - 26/06/26</span>
-        </div>
-
-        <div class="comp-row">
-            <span class="comp-name"><strong>Mettre à disposition des utilisateurs un service informatique</strong></span>
-            <span>Automatisation des processus d'export de données volumineuses (+120k lignes) avec génération de rapports Excel structurés et script de débogage autonome.</span>
-            <span>Pandas, Openpyxl, Fichiers Excel</span>
-            <span class="comp-date">16/05/26 - 26/06/26</span>
-        </div>
+    <div class="table-excel-container">
+        <table class="tableau-final">
+            <thead>
+                <tr>
+                    <th class="align-gauche">Réalisations professionnelles</th>
+                    <th class="align-gauche">Période</th>
+                    <th>Gérer le patrimoine</th>
+                    <th>Répondre aux incidents</th>
+                    <th>Présence en ligne</th>
+                    <th>Mode projet</th>
+                    <th>Mettre à disposition</th>
+                    <th>Développement prof.</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="col-titre">Scraping Selenium pour récupérer les infos produits sur SellerAmp et insertion automatique en base de données MySQL</td>
+                    <td class="col-date">27/04/26 - 04/05/26</td>
+                    <td class="case-x">X</td>
+                    <td class="case-x">X</td>
+                    <td></td>
+                    <td class="case-x">X</td>
+                    <td class="case-x">X</td>
+                    <td class="case-x">X</td>
+                </tr>
+                <tr>
+                    <td class="col-titre">Outil central de gestion des stocks multi-marketplaces (Amazon, Cdiscount, Back Market, eBay)</td>
+                    <td class="col-date">05/05/26 - 15/05/26</td>
+                    <td class="case-x">X</td>
+                    <td></td>
+                    <td></td>
+                    <td class="case-x">X</td>
+                    <td class="case-x">X</td>
+                    <td class="case-x">X</td>
+                </tr>
+                <tr>
+                    <td class="col-titre">Développement et maintenance applicative : débogage et évolution du pipeline Python d'analyse de rentabilité Amazon FBA (correction ROI, parsing fees API)</td>
+                    <td class="col-date">16/05/26 - 26/06/26</td>
+                    <td class="case-x">X</td>
+                    <td class="case-x">X</td>
+                    <td></td>
+                    <td class="case-x">X</td>
+                    <td class="case-x">X</td>
+                    <td class="case-x">X</td>
+                </tr>
+                <tr>
+                    <td class="col-titre">Gestion des bases de données : conception et exploitation de la base MySQL centralisant les données de 8 100 produits sur 16 marketplaces Amazon</td>
+                    <td class="col-date">16/05/26 - 26/06/26</td>
+                    <td class="case-x">X</td>
+                    <td></td>
+                    <td></td>
+                    <td class="case-x">X</td>
+                    <td class="case-x">X</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="col-titre">Réalisation de tests et validation applicative : création d'un script de test autonome pour valider les appels API (catalog et fees) avec affichage détaillé des requêtes/réponses</td>
+                    <td class="col-date">16/05/26 - 26/06/26</td>
+                    <td></td>
+                    <td class="case-x">X</td>
+                    <td></td>
+                    <td class="case-x">X</td>
+                    <td class="case-x">X</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="col-titre">Collaboration en mode projet : intégration dans l'équipe, échanges itératifs avec le responsable pour ajuster les besoins (multi-marketplaces, formats de sortie, performance)</td>
+                    <td class="col-date">16/05/26 - 26/06/26</td>
+                    <td></td>
+                    <td class="case-x">X</td>
+                    <td></td>
+                    <td class="case-x">X</td>
+                    <td></td>
+                    <td class="case-x">X</td>
+                </tr>
+                <tr>
+                    <td class="col-titre">Sécurisation applicative : gestion de l'authentification OAuth2 à l'API Amazon (tokens, refresh automatique, variables d'environnement)</td>
+                    <td class="col-date">16/05/26 - 26/06/26</td>
+                    <td class="case-x">X</td>
+                    <td class="case-x">X</td>
+                    <td></td>
+                    <td></td>
+                    <td class="case-x">X</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </section>
 
@@ -352,6 +389,23 @@
         <div class="skill">Amazon SP-API</div>
         <div class="skill">API REST</div>
         <div class="skill">Git / GitLab</div>
+    </div>
+</section>
+
+<section class="section">
+    <p class="section-label">Certifications</p>
+    <h2>Certifications obtenues</h2>
+
+    <div class="timeline">
+        <div class="timeline-item">
+            <h3>Certificat Voltaire</h3>
+            <p>Certification en orthographe et maîtrise de la langue française</p>
+        </div>
+
+        <div class="timeline-item">
+            <h3>Attestation CNIL</h3>
+            <p>Protection des données personnelles et conformité RGPD</p>
+        </div>
     </div>
 </section>
 
